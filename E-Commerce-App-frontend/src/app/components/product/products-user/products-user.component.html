@@ -1,0 +1,138 @@
+<!-- <div class="text-center p-5 m-5"><h2>Our Productes</h2></div>
+
+
+<p><input [(ngModel)]="search" type="text" class="form-control w-75 mx-auto my-4 "></p>
+<div class="m-auto">
+  <button (click)="filter(0)" class="btn btn-secondary">All</button>
+  <button *ngFor="let cat of categories" (click)="filter(cat.id)"  class="btn btn-secondary">{{cat.name}}</button>
+</div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+
+    <div class="col"  *ngFor="let product of productsShow|search:search">
+        <div class="card">
+        <img [src]="product.img" class="card-img-top" [alt]="product.name">
+        <div class="card-body">
+            <h4 class="card-title">{{product.name}}</h4>
+            <h4 class="card-title">{{product.price|currency}}</h4>
+            <h4 class="card-title" [ngStyle]="{
+            color: product.quantityAvailable == 0?'red': product.quantityAvailable == 1? 'orange':'green' }">
+            {{product.quantityAvailable == 0?'Not available':product.quantityAvailable == 1? 'only one available':'Quantity: '+product.quantityAvailable}}</h4>
+            <button (click)="addToCart(product.id,1)" [disabled]="product.quantityAvailable == 0" class="btn" [ngClass]="{'btn-danger':product.quantityAvailable == 0,'btn-warning':product.quantityAvailable == 1,'btn-success':product.quantityAvailable>1,}">BUY</button> -->
+
+<!-- ****************************************************************************************************************************** -->
+
+<!--
+            <i
+            [routerLink]="['/products', product.id]"
+            class="fs-3 mx-2 text-warning bi bi-eye-fill"
+          ></i> -->
+<!-- ****************************************************************************************************************************** ^^^^^^^^^^ -->
+
+<!--
+        </div>
+        </div>
+    </div>
+  </div> -->
+
+<!-- ==================================================================================================================================== -->
+
+<!-- <div class="text-center p-5 m-5"><h2>Our Productes</h2></div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col"  *ngFor="let product of products">
+        <div class="card">
+            <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp" class="img-fluid"/>
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <h5 class="card-title">{{product.price}}</h5>
+              <h6 class="card-title" [ngStyle]="{
+                color: product.quantity == 0?'red': product.quantity == 1? 'orange':'green' }">
+                {{product.quantity == 0?'Not available':product.quantity == 1? 'only one available':'Quantity: '+product.quantity}}</h6>
+                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>Button</a>
+            </div>
+          </div>
+    </div>
+  </div> -->
+
+<!-- ==================================================================================================================================== -->
+<div class="container-fluid">
+  <!-- Title Section -->
+  <div class="text-center py-4">
+    <h2 class="display-4">Our Products</h2>
+  </div>
+
+  <!-- Filter and Search Section -->
+  <div class="row justify-content-center align-items-center mb-5">
+    <div class="col-md-5 text-center">
+      <button (click)="filter(0)" class="btn btn-danger category-btn">
+        All
+      </button>
+      <button
+        *ngFor="let cat of categories"
+        (click)="filter(cat.id)"
+        class="btn btn-danger category-btn"
+      >
+        {{ cat.name }}
+      </button>
+    </div>
+    <div class="col-md-5">
+      <div class="input-group">
+        <input
+          [(ngModel)]="search"
+          type="text"
+          class="form-control search-input"
+          placeholder="Search products..."
+        />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="button-addon2"
+        >
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Cards Section -->
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let product of productsShow | search : search">
+          <div class="card h-100 border border-secondary rounded shadow-sm">
+            <img
+              [src]="product.img"
+              class="card-img-top"
+              alt="{{ product.name }}"
+            />
+            <div class="card-body">
+              <h4 class="card-title">{{ product.name }}</h4>
+              <h5 class="card-text">{{ product.price | currency }}</h5>
+              <p class="card-text text-muted mb-3">
+                {{
+                  product.quantityAvailable === 0
+                    ? "Not available"
+                    : product.quantityAvailable === 1
+                    ? "Only one available"
+                    : "Quantity: " + product.quantityAvailable
+                }}
+              </p>
+              <button
+                (click)="addToCart(product.id, 1)"
+                [disabled]="product.quantityAvailable === 0"
+                class="btn btn-buy btn-block"
+              >
+                BUY
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

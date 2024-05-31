@@ -1,0 +1,44 @@
+.products-container {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+}
+
+.add-product-btn {
+  font-weight: bold;
+}
+
+.table {
+  background-color: #fff;
+}
+
+.table th,
+.table td {
+  vertical-align: middle !important;
+}
+
+.product-image img {
+  max-width: 100px;
+  height: auto;
+}
+
+.action-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.edit-icon {
+  color: #007bff;
+}
+
+.view-icon {
+  color: #ffc107;
+}
+
+.delete-icon {
+  color: #dc3545;
+}
+
+.action-icon:hover {
+  color: #212529;
+}

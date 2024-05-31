@@ -1,0 +1,34 @@
+<div class="cont">
+  <div class="product-details-container">
+    <div class="product-details-header">
+      <h1>Product Details</h1>
+    </div>
+    <div class="product-details-content">
+      <div class="row">
+        <div class="col-md-6">
+          <img [src]="product?.img" class="product-image" alt="Product Image" />
+        </div>
+        <div class="col-md-6">
+          <div class="product-info">
+            <h2>{{ product?.name }}</h2>
+            <p class="price">Price: {{ product?.price | currency }}</p>
+            <p class="quantity">
+              Available Quantity: {{ product?.quantityAvailable }}
+            </p>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </span>
+            </div>
+            <button class="btn btn-back-to-products" (click)="backToProducts()">
+              Back To Products
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

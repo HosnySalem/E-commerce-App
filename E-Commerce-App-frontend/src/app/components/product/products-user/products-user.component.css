@@ -1,0 +1,74 @@
+.container-fluid {
+  padding: 50px 20px;
+}
+
+.display-4 {
+  font-weight: bold;
+  color: #333;
+}
+
+.search-input {
+  border-radius: 20px;
+}
+
+.category-btn {
+  margin-right: 10px;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  color: #555;
+}
+
+.btn-buy {
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  background-color: #007bff; /* Adjusted color */
+  color: #fff; /* Adjusted text color */
+}
+
+.btn-buy:disabled {
+  background-color: #ddd !important;
+  cursor: not-allowed;
+}
+
+.btn-buy:hover:not(:disabled) {
+  background-color: #0056b3; /* Adjusted color on hover */
+  border-color: #0056b3; /* Adjusted border color on hover */
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
